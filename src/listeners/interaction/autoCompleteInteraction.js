@@ -1,7 +1,9 @@
 const logger = require('@mirasaki/logger');
+const { getVehicleQueryResult } = require('../../modules/vehicles');
 
 // Mapping our command names
 const HELP = 'help';
+const VEHICLES = 'vehicles';
 
 // Mapping our commands
 const commandMap = [];
@@ -27,10 +29,7 @@ const populateCommandMap = (commands) => {
 };
 
 // Destructure from env
-const {
-  DEBUG_AUTOCOMPLETE_RESPONSE_TIME,
-  TEST_SERVER_GUILD_ID
-} = process.env;
+const { DEBUG_AUTOCOMPLETE_RESPONSE_TIME } = process.env;
 
 module.exports = (client, interaction) => {
   // guild property is present and available,
@@ -44,14 +43,12 @@ module.exports = (client, interaction) => {
 
   // Destructure from interaction
   const {
-    guild,
     commandName,
     member
   } = interaction;
 
   // Get our command name query
   const query = interaction.options.getFocused()?.toLowerCase() || '';
-
 
   // Start our timer for performance logging
   const autoResponseQueryStart = process.hrtime();
@@ -68,12 +65,6 @@ module.exports = (client, interaction) => {
       // Filtering out unusable commands
       const workingCmdMap = commandMap.filter(
         (cmd) => member.permLevel >= cmd.permLevel
-        // Filtering out test commands
-        && (
-          cmd.globalCmd === true
-            ? true
-            : guild.id === TEST_SERVER_GUILD_ID
-        )
       );
 
       // Getting our search query's results
@@ -95,6 +86,12 @@ module.exports = (client, interaction) => {
         })
         .sort((a, b) => a.name.localeCompare(b.name));
 
+      // Finish our switch case entry
+      break;
+    }
+
+    case VEHICLES: {
+      result = getVehicleQueryResult(query);
       // Finish our switch case entry
       break;
     }
