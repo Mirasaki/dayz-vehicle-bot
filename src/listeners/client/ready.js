@@ -1,5 +1,6 @@
 const logger = require('@mirasaki/logger');
 const chalk = require('chalk');
+const { updateVehicleChannel } = require('../../modules/vehicles');
 
 module.exports = (client) => {
   // Logging our process uptime to the developer
@@ -10,7 +11,7 @@ module.exports = (client) => {
     chalk.grey(`#${client.user.discriminator}`)
   } after ${upTimeStr}`);
 
-  // Calculating the membercount
+  // Calculating the member count
   const memberCount = client.guilds.cache.reduce(
     (previousValue, currentValue) =>
       previousValue += currentValue.memberCount, 0
@@ -18,6 +19,9 @@ module.exports = (client) => {
 
   // Getting the server count
   const serverCount = (client.guilds.cache.size).toLocaleString('en-US');
+
+  // Send a message for every single available vehicle
+  updateVehicleChannel(client);
 
   // Logging counts to developers
   logger.info(`Ready to serve ${memberCount} members across ${serverCount} servers!`);
