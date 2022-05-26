@@ -1,0 +1,112 @@
+{
+  "vehicleChannelId": "806479539110674472",
+  "vehicles": [
+    {
+      "name": "Gunter 2",
+      "imageURL": "https://static.wikia.nocookie.net/dayz_gamepedia/images/5/53/Hatchback_02.png/revision/latest/scale-to-width-down/1000?cb=20190522060629",
+      "storageSlots": 300,
+      "price": 25000,
+      "seats": 4,
+      "speed": "192 kph",
+      "acceleration": "Great",
+      "handling": "Good",
+      "description": "The Gunter 2 is based on the VolksWagen Golf MKII. It has 4 doors, and comes in 3 colors: Blue, Red, and Black. It can be found anywhere on any map. Currently the fastest vehicle in the game, and has 5 gears, whereas most cars have 4. This is one of the most common cars along with the Sarka 120.",
+      "rating": "8.2"
+    },
+    {
+      "name": "Ada 4x4",
+      "imageURL": "https://static.wikia.nocookie.net/dayz_gamepedia/images/c/cc/Lada-niva.png/revision/latest/scale-to-width-down/600?cb=20151219090954",
+      "storageSlots": 300,
+      "price": 22500,
+      "seats": 4,
+      "speed": "138 kph",
+      "acceleration": "Average",
+      "handling": "Average",
+      "description": "The Ada 4x4 is based on the early Lada Niva 2121. It was the only 2-doors vehicle in the game until update 1.10 adding in the M3S Truck. To get into the back seats, players need to lower the front seats (at least one) to get in the back, making this vehicle difficult to flee with when you are being chased or shot at (if you seat in the back). This is also the only vehicle on PC to have a spare wheel attachment (compared to the PS4 version where the Olga 24 has a spare tyre slot in the trunk) which is under the hood. It comes in 3 colors : Dark Blue, Green and Light Grey. It is currently the second best vehicle off-road (M3S truck being the first one with it's low top-speed and high grip). It is also the only drivable vehicle in DayZ to have rust spots on the bodywork (pointing at the steel quality and poor care given by the owners).",
+      "rating": "7.4"
+    },
+    {
+      "name": "Sarka 120",
+      "imageURL": "https://static.wikia.nocookie.net/dayz_gamepedia/images/6/6f/S120.png/revision/latest/scale-to-width-down/1000?cb=20190522063830",
+      "storageSlots": 300,
+      "price": 23225,
+      "seats": 4,
+      "speed": "119 kph",
+      "acceleration": "Bad",
+      "handling": "Great",
+      "description": "Unlike all other cars in-game, the Sarka's engine is in the rear, as is the battery and spark plug. The radiator on the other hand is still in the front. It's inventory holds 300 slots, same as most other vehicles.",
+      "rating": "7.8"
+    },
+    {
+      "name": "Olga 24",
+      "imageURL": "https://static.wikia.nocookie.net/dayz_gamepedia/images/3/38/Volga.png/revision/latest/scale-to-width-down/600?cb=20151219090823",
+      "storageSlots": 400,
+      "price": 19775,
+      "seats": 4,
+      "speed": "156 kph",
+      "acceleration": "Bad",
+      "handling": "Bad",
+      "description": "The Olga 24 has a large turning circle and can be difficult to maneuver at speed, and struggles in off-road conditions. It has an approximate top speed of 140kph when red-lining, although it's possible to reach speeds of at least 156kph. With its planet-like turning radius and relatively long gearing, the Olga has trouble getting up to speed, as most cars currently in the game have 4 gears and the Olga's gears are fairly long its underpowered engine can cause it to be very sluggish.",
+      "rating": "6.3"
+    },
+    {
+      "name": "M3S",
+      "variants": [
+        {
+          "name": "M3S - Blue",
+          "imageURL": "https://static.wikia.nocookie.net/dayz_gamepedia/images/f/fb/M3S_Covered_Blue.png/revision/latest/scale-to-width-down/700?cb=20210119114148"
+        },
+        {
+          "name": "M3S - Orange",
+          "imageURL": "https://static.wikia.nocookie.net/dayz_gamepedia/images/f/f2/M3S_Covered_Orange.png/revision/latest/scale-to-width-down/700?cb=20210119115111",
+          "fields": [
+            {
+              "name": "Extra Field 2 - Applied on Orange variant",
+              "value": "Value Field 2",
+              "inline": true
+            }
+          ]
+        },
+        {
+          "name": "M3S - Example",
+          "imageURL": "https://www.pngarts.com/files/4/Attention-PNG-Photo.png",
+          "storageSlots": 9999999,
+          "seats": 18,
+          "speed": "1380 kph",
+          "acceleration": "Best",
+          "handling": "Best",
+          "description": "This is an **EXAMPLE** on how to overwrite base values for variants in your `config/vehicles.json` file. ANY value you put in your variant block will overwrite the base vehicle. Remove this example block, showcased at the very bottom of the file. (If you can't find it, press 'ctrl + f', type '1380 kph' and press your enter key)",
+          "rating": 22,
+          "fields": [
+            {
+              "name": "Extra Field 2 - Applied on example variant",
+              "value": "Value Field 2 - Inline is true, so if the previous field doesn't have `inline: false` this field will be displayed on the same line",
+              "inline": true
+            },
+            {
+              "name": "Extra Field 3 - Applied on example variant",
+              "value": "Value Field 3 - Inline is true",
+              "inline": true
+            }
+          ]
+        }
+      ],
+      "imageURL": "https://static.wikia.nocookie.net/dayz_gamepedia/images/0/0d/M3S_Covered.png/revision/latest/scale-to-width-down/1000?cb=20210119100603",
+      "storageSlots": 600,
+      "price": 25000,
+      "seats": 2,
+      "speed": "50 kph",
+      "acceleration": "Bad",
+      "handling": "Great",
+      "description": "The M3S is the slowest vehicle in DayZ. It has a maximum speed of 50 kph when driving on flat ground or down a slight hill. When going normal throttle, it reaches about 40 kph. However, when driving gentle throttle, the max speed is about 17 kph. It is advised to start and drive the M3S in the fourth gear, as it will give the best acceleration and highest top speed.",
+      "rating": "6.8",
+      "fields": [
+        {
+          "name": "Extra Field 1 - Applied on base class",
+          "value": "Value Field 1 - Inline is false, so the field will always be displayed on a new line",
+          "inline": false
+        }
+      ]
+    }
+  ]
+}
