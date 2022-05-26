@@ -11,7 +11,7 @@
       "acceleration": "Great",
       "handling": "Good",
       "description": "The Gunter 2 is based on the VolksWagen Golf MKII. It has 4 doors, and comes in 3 colors: Blue, Red, and Black. It can be found anywhere on any map. Currently the fastest vehicle in the game, and has 5 gears, whereas most cars have 4. This is one of the most common cars along with the Sarka 120.",
-      "rating": "8.2"
+      "rating": 8.2
     },
     {
       "name": "Ada 4x4",
@@ -23,7 +23,7 @@
       "acceleration": "Average",
       "handling": "Average",
       "description": "The Ada 4x4 is based on the early Lada Niva 2121. It was the only 2-doors vehicle in the game until update 1.10 adding in the M3S Truck. To get into the back seats, players need to lower the front seats (at least one) to get in the back, making this vehicle difficult to flee with when you are being chased or shot at (if you seat in the back). This is also the only vehicle on PC to have a spare wheel attachment (compared to the PS4 version where the Olga 24 has a spare tyre slot in the trunk) which is under the hood. It comes in 3 colors : Dark Blue, Green and Light Grey. It is currently the second best vehicle off-road (M3S truck being the first one with it's low top-speed and high grip). It is also the only drivable vehicle in DayZ to have rust spots on the bodywork (pointing at the steel quality and poor care given by the owners).",
-      "rating": "7.4"
+      "rating": 7.4
     },
     {
       "name": "Sarka 120",
@@ -35,7 +35,7 @@
       "acceleration": "Bad",
       "handling": "Great",
       "description": "Unlike all other cars in-game, the Sarka's engine is in the rear, as is the battery and spark plug. The radiator on the other hand is still in the front. It's inventory holds 300 slots, same as most other vehicles.",
-      "rating": "7.8"
+      "rating": 7.8
     },
     {
       "name": "Olga 24",
@@ -47,7 +47,7 @@
       "acceleration": "Bad",
       "handling": "Bad",
       "description": "The Olga 24 has a large turning circle and can be difficult to maneuver at speed, and struggles in off-road conditions. It has an approximate top speed of 140kph when red-lining, although it's possible to reach speeds of at least 156kph. With its planet-like turning radius and relatively long gearing, the Olga has trouble getting up to speed, as most cars currently in the game have 4 gears and the Olga's gears are fairly long its underpowered engine can cause it to be very sluggish.",
-      "rating": "6.3"
+      "rating": 6.3
     },
     {
       "name": "M3S",
@@ -79,7 +79,8 @@
       "speed": "50 kph",
       "acceleration": "Bad",
       "handling": "Great",
-      "description": "The M3S is the slowest vehicle in DayZ. It has a maximum speed of 50 kph when driving on flat ground or down a slight hill. When going normal throttle, it reaches about 40 kph. However, when driving gentle throttle, the max speed is about 17 kph. It is advised to start and drive the M3S in the fourth gear, as it will give the best acceleration and highest top speed."
+      "description": "The M3S is the slowest vehicle in DayZ. It has a maximum speed of 50 kph when driving on flat ground or down a slight hill. When going normal throttle, it reaches about 40 kph. However, when driving gentle throttle, the max speed is about 17 kph. It is advised to start and drive the M3S in the fourth gear, as it will give the best acceleration and highest top speed.",
+      "rating": 7.2
     }
   ]
 }
