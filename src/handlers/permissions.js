@@ -1,5 +1,4 @@
 const { PermissionsBitField } = require('discord.js');
-const config = require('../../config/config.json');
 
 // Our ordered permission level configuration
 const permConfig = [
@@ -38,15 +37,9 @@ const permConfig = [
   },
 
   {
-    name: 'Developer',
-    level: 4,
-    hasLevel: (member) => config.permissions.developers.includes(member.user.id)
-  },
-
-  {
     name: 'Bot Owner',
-    level: 5,
-    hasLevel: (member) => config.permissions.ownerId === member.user.id
+    level: 4,
+    hasLevel: (member) => process.env.OWNER_ID === member.user.id
   }
 ].reverse();
 

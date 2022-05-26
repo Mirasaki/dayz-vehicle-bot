@@ -13,7 +13,6 @@ const {
   CLEAR_SLASH_COMMAND_API_DATA,
   DISCORD_BOT_TOKEN,
   CLIENT_ID,
-  TEST_SERVER_GUILD_ID,
   DEBUG_ENABLED,
   REFRESH_SLASH_COMMAND_API_DATA,
   DEBUG_SLASH_COMMAND_API_DATA
@@ -30,8 +29,8 @@ class Command {
 
       // Status
       enabled: true,
-      globalCmd: false,
-      testServerCmd: true,
+      globalCmd: true,
+      testServerCmd: false,
       nsfw: false,
 
       // Command Cooldown
@@ -79,12 +78,6 @@ const clearSlashCommandData = () => {
   if (CLEAR_SLASH_COMMAND_API_DATA === 'true') {
     logger.info('Clearing ApplicationCommand API data');
     rest.put(Routes.applicationCommands(CLIENT_ID), { body: [] });
-    rest.put(Routes.applicationGuildCommands(CLIENT_ID, TEST_SERVER_GUILD_ID), { body: [] })
-      .catch((err) => {
-        // Catching Missing Access error
-        logger.syserr('Error encountered while trying to clear GuildCommands in the test server, this probably means your TEST_SERVER_GUILD_ID in the config/.env file is invalid or the client isn\'t currently in that server');
-        logger.syserr(err);
-      });
     logger.success(
       'Successfully reset all Slash Commands. It may take up to an hour for global changes to take effect.'
     );
@@ -150,7 +143,6 @@ const refreshSlashCommandData = (client) => {
 
     // Handle our different cmd config setups
     registerGlobalCommands(client); // Global Slash Command
-    registerTestServerCommands(client); // Test Server Commands
 
     logger.endLog(`Refreshing Application ${chalk.white('(/)')} Commands.`);
   } catch (error) {
@@ -185,47 +177,6 @@ const registerGlobalCommands = async (client) => {
     Routes.applicationCommands(CLIENT_ID),
     { body: globalCommandData }
   );
-};
-
-// Registering our Test Server commands
-const registerTestServerCommands = (client) => {
-  // Defining our variables
-  const { commands } = client.container;
-  const testServerCommandData = commands
-    .filter((cmd) =>
-      cmd.config.globalCmd === false // Filter out global commands
-      && cmd.config.testServerCmd === true
-      && cmd.config.enabled === true
-    )
-    .map((cmd) => cmd.data);
-
-  // Return if there's no test command data
-  if (testServerCommandData.length === 0) {
-    return true;
-  }
-
-  // Logging
-  logger.info('Registering Test Server Commands');
-
-  // Extensive debug logging
-  if (DEBUG_SLASH_COMMAND_API_DATA === 'true') {
-    logger.startLog('Test Server Command Data');
-    console.table(testServerCommandData);
-    logger.endLog('Test Server Command Data');
-  }
-
-  // Sending the test server command data
-  rest.put(
-    Routes.applicationGuildCommands(
-      CLIENT_ID,
-      TEST_SERVER_GUILD_ID // Providing our test server id
-    ),
-    { body: testServerCommandData }
-  ).catch((err) => {
-    // Catching Missing Access error
-    logger.syserr('Error encountered while trying to register GuildCommands in the test server, this probably means your TEST_SERVER_GUILD_ID in the config/.env file is invalid or the client isn\'t currently in that server');
-    logger.syserr(err);
-  });
 };
 
 // Disable our eslint rule
@@ -267,7 +218,6 @@ const validateCmdConfig = (cmd) => {
 
   // Check our required boolean values
   if (typeof config.globalCmd !== 'boolean') throwBoolErr('globalCmd');
-  if (typeof config.testServerCmd !== 'boolean') throwBoolErr('testServerCmd');
   if (typeof config.nsfw !== 'boolean') throwBoolErr('nsfw');
 
   // Description is required
