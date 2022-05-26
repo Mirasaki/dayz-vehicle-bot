@@ -20,7 +20,7 @@ module.exports = (client, interaction) => {
     commandName
   } = interaction;
 
-  // Initial performace measuring timer
+  // Initial performance measuring timer
   const cmdRunTimeStart = process.hrtime();
 
   // Logging the Command to our console
@@ -54,7 +54,7 @@ module.exports = (client, interaction) => {
   // Grab our data object from the client command
   const { data } = clientCmd;
 
-  // Return if we can't reply to the interacion
+  // Return if we can't reply to the interaction
   const clientCanReply = interaction.isRepliable();
   if (!clientCanReply) {
     logger.debug(`Interaction returned - Interaction not repliable\nCommand: ${data.name}\nServer: ${guild.name}\nChannel: #${channel.name}\nMember: ${member}`);
@@ -81,7 +81,7 @@ module.exports = (client, interaction) => {
   }
 
   // Throttle the command
-  // permLevel 4 = Developer
+  // permLevel 4 = Owner
   if (member.permLevel < 4) {
     const onCooldown = throttleCommand(clientCmd, `${guild.id}${member.id}`);
     if (onCooldown !== false) {
