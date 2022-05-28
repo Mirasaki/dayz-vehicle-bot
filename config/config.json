@@ -1,12 +1,3 @@
 {
-  "intents": [ "GUILDS" ],
-  "presence": {
-    "status": "online",
-    "activities": [
-      {
-        "name": "/play",
-        "type": "LISTENING"
-      }
-    ]
-  }
+  "intents": [ "GUILDS" ]
 }
