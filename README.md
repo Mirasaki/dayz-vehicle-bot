@@ -23,9 +23,7 @@ A DayZ bot written in JavaScript to display an overview of your in-game vehicles
 
 - [discord.js-bot-template](https://github.com/Mirasaki/discord.js-bot-template)
 
-## Live Demo
-
-Come try out the bot in our [support server](https://discord.gg/BSawkrrn9K) or [watch the video showcase](https://cdn.mirasaki.dev/zRV4.mp4)
+## Showcase
 
 ![Embed Output/Preview](https://user-images.githubusercontent.com/57721238/170555505-153181f2-989c-49fd-acea-d75acbcb1fb3.png)
 
