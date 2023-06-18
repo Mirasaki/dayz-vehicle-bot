@@ -60,7 +60,7 @@ module.exports = {
           color: colorResolver(colors.main),
           fields,
           footer: {
-            text: `Requested by ${member.user.tag}`
+            text: `Requested by ${member.user.username}`
           }
         }]
       });
